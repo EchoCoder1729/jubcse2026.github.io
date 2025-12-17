@@ -3,7 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jadavpur University — CSE — Class of 2026</title>
+  <title>JU CSE Yearbook — Class of 2026</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -14,15 +19,16 @@
       --border:#e5e7eb;
       --accent:#1e3a8a;
       --accent-soft:#eff6ff;
+      --year:#dc2626;
     }
 
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
       background:var(--bg);
       color:var(--text);
-      line-height:1.6;
+      line-height:1.65;
     }
 
     a{color:var(--accent);text-decoration:none}
@@ -36,27 +42,53 @@
 
     /* Header */
     header{
-      background:#0f172a;
+      background:linear-gradient(180deg,#020617,#0f172a);
       color:#fff;
-      padding:28px 0;
-    }
-    header h1{
-      margin:0;
-      font-size:26px;
-      font-weight:600;
-    }
-    header p{
-      margin:6px 0 0;
-      color:#cbd5f5;
-      font-size:14px;
+      padding:28px 0 34px;
     }
 
     .header-row{
       display:flex;
+      align-items:center;
       justify-content:space-between;
-      align-items:flex-start;
       gap:16px;
       flex-wrap:wrap;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .brand img{
+      height:52px;
+      width:auto;
+      background:#fff;
+      border-radius:6px;
+      padding:4px;
+    }
+
+    header h1{
+      margin:0;
+      font-family:Merriweather,serif;
+      font-size:26px;
+      font-weight:700;
+    }
+
+    header p{
+      margin:6px 0 0;
+      color:#c7d2fe;
+      font-size:14px;
+    }
+
+    .year{
+      color:var(--year);
+      background:#fee2e2;
+      padding:2px 8px;
+      border-radius:6px;
+      font-weight:600;
+      margin-left:6px;
     }
 
     .repo{
@@ -68,10 +100,10 @@
       white-space:nowrap;
     }
 
-    /* Sections */
-    section{margin-top:40px}
+    section{margin-top:44px}
 
     h2{
+      font-family:Merriweather,serif;
       font-size:20px;
       margin-bottom:6px;
     }
@@ -85,28 +117,28 @@
     /* Grid */
     .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+      grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
       gap:20px;
     }
 
     .card{
       background:var(--card);
       border:1px solid var(--border);
-      border-radius:12px;
-      padding:18px;
-      transition:box-shadow .15s ease,transform .15s ease;
+      border-radius:14px;
+      padding:16px;
+      transition:.15s ease;
     }
 
     .card:hover{
-      box-shadow:0 10px 28px rgba(2,6,23,.08);
-      transform:translateY(-2px);
+      box-shadow:0 12px 32px rgba(2,6,23,.08);
+      transform:translateY(-3px);
     }
 
     .avatar{
       width:100%;
       aspect-ratio:1/1;
       object-fit:cover;
-      border-radius:10px;
+      border-radius:12px;
       background:#e5e7eb;
       margin-bottom:12px;
     }
@@ -122,7 +154,6 @@
       color:var(--muted);
     }
 
-    /* Empty state */
     .empty{
       text-align:center;
       color:var(--muted);
@@ -132,30 +163,30 @@
     /* Batch photo */
     .batch img{
       max-width:100%;
-      border-radius:12px;
-      box-shadow:0 10px 28px rgba(2,6,23,.12);
+      border-radius:14px;
+      box-shadow:0 12px 32px rgba(2,6,23,.12);
       margin-top:12px;
     }
 
-    /* Contribution section */
+    /* Contribution */
     .contribute{
       background:var(--accent-soft);
       border:1px solid #dbeafe;
-      border-radius:12px;
-      padding:20px;
+      border-radius:14px;
+      padding:22px;
     }
 
     .contribute pre{
       background:#020617;
       color:#e5e7eb;
       padding:14px;
-      border-radius:8px;
+      border-radius:10px;
       font-size:13px;
       overflow:auto;
     }
 
     footer{
-      margin:48px 0 24px;
+      margin:56px 0 28px;
       text-align:center;
       color:var(--muted);
       font-size:13px;
@@ -163,6 +194,7 @@
 
     @media(max-width:640px){
       header h1{font-size:22px}
+      .brand img{height:44px}
     }
   </style>
 </head>
@@ -171,10 +203,18 @@
 
 <header>
   <div class="container header-row">
-    <div>
-      <h1>Jadavpur University — Computer Science & Engineering</h1>
-      <p>Class of 2026 · Digital Yearbook</p>
+    <div class="brand">
+      <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Jadavpur_University_Logo.svg"
+           alt="Jadavpur University Logo">
+      <div>
+        <h1>
+          Jadavpur University — CSE
+          <span class="year">2026</span>
+        </h1>
+        <p>Graduating Batch · Digital Yearbook</p>
+      </div>
     </div>
+
     <a class="repo"
        href="https://github.com/jubcse2026/jubcse2026.github.io"
        target="_blank"
@@ -203,25 +243,24 @@
   <!-- Batch Photo -->
   <section class="batch">
     <h2>Batch Photo</h2>
-    <!-- <p class="section-desc">
-      Upload <code>images/batch.jpg</code> to display the full class photo.
-    </p> -->
-    <img src="images/batch.jpeg"
-         alt="Jadavpur University CSE Class of 2026"
-         onerror="this.style.display='none'">
+    <img id="batchImg"
+         src="images/batch.jpeg"
+         alt="JU CSE Class of 2026"
+         onerror="this.closest('.batch').style.display='none'">
   </section>
 
-  <!-- Contribution (correct placement) -->
+  <!-- Contribution -->
   <section id="contribute" class="contribute">
     <h2>How to add your name to this page</h2>
     <p class="section-desc">
       This page is community-maintained. Add your profile by opening a Pull Request.
     </p>
 
-<pre>git clone https://github.com/jubcse2026/jubcse2026.github.io.git
+<pre>git clone https://github.com/&lt;your-username&gt;/jubcse2026.github.io.git
 cd jubcse2026.github.io
 cp students/template.json students/your-id.json
 # add your photo to images/
+# add "your-id.json" to students/index.json
 git add .
 git commit -m "Add profile: your name"
 git push</pre>
@@ -291,7 +330,6 @@ async function loadStudents(){
     empty.style.display='block';
   }
 }
-
 document.addEventListener('DOMContentLoaded',loadStudents);
 </script>
 
